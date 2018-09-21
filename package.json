@@ -15,6 +15,7 @@
     "grunt-ng-annotate": "^1.0.1"
   },
   "scripts": {
-    "start": "grunt concat && grunt uglify && http-server -a localhost -p 8000 -c-1 ./app"
+    "api": "node ./node-api/index.js",
+    "start": "grunt concat && grunt uglify && http-server -P http://localhost:8000 -a localhost -p 8080 -c-1 ./app"
   }
 }
