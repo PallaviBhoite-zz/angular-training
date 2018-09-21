@@ -8,6 +8,7 @@
     "angular": "^1.7.4",
     "angular-route": "~1.5.0",
     "angular-loader": "~1.5.0",
+    "angular-translate": "2.18.1",
     "http-server": "^0.9.0",
     "grunt": "^0.4.5",
     "grunt-contrib-concat": "^0.5.1",

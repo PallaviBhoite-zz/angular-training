@@ -9,14 +9,17 @@ module.exports = function(grunt) {
                     './app/services/*.js',
                     './app/view1/*.js',
                     './app/view2/*.js',
-                    './app/directive/*.js'
+                    './app/directive/*.js',
+                    './node_modules/angular-translate/dist/angular-translate.min.js'
                 ],
                 dest: './app/dest/app.js'
             }
         },
         uglify: {
             js: {
-                src: ['./app/dest/app.js'],
+                src: [
+                    './app/dest/app.js'
+                ],
                 dest: './app/dest/min/app.min.js'
             }
         }

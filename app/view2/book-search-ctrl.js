@@ -1,6 +1,6 @@
 'use strict';
 
-function BookSearchController($scope) {
+function BookSearchController($scope, $translate) {
     var defaultBookDetails = {
         name: "Clean Code",
         author: "Robert Martin",
@@ -8,6 +8,7 @@ function BookSearchController($scope) {
     };
 
     function init() {
+        $scope.language = 'en';
         $scope.booksWishlist = [];
         $scope.bookDetails = Object.assign({}, defaultBookDetails);
     }
@@ -30,11 +31,16 @@ function BookSearchController($scope) {
         $scope.booksForm.author.$invalid;
     };
 
+    $scope.changeLanguage = function () {
+        $translate.use($scope.language);
+    };
+
     init();
 }
 
 angular.module('myApp.view2')
 .controller('BookSearchCtrl', [
     '$scope',
+    '$translate',
     BookSearchController
 ]);

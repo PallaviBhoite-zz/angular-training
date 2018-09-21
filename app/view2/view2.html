@@ -1,10 +1,19 @@
-<p>This is the partial for view 2.</p>
-
+<section>
+    <label>Change the language</label>
+    <select
+            ng-model="language"
+            ng-change="changeLanguage()"
+    >
+        <option value="en">English</option>
+        <option value="fr">French</option>
+    </select>
+</section>
+<br><br>
 <form name="booksForm" novalidate>
 
     <div width="100%">
         <div>
-            <label>Enter book name:</label>
+            <label>{{'ENTER_BOOK_NAME' | translate}}</label>
             <input name="name" type="text" ng-model="bookDetails.name" required>
             <span style="color:red" ng-show="isInvalid(booksForm.name)">
                 <span ng-show="booksForm.name.$error.required">
