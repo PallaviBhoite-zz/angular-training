@@ -1,4 +1,60 @@
 <p>This is the partial for view 2.</p>
-<p>
-  {{'expression example'}}
-</p>
+
+<form name="booksForm" novalidate>
+
+    <div width="100%">
+        <div>
+            <label>Enter book name:</label>
+            <input name="name" type="text" ng-model="bookDetails.name" required>
+            <span style="color:red" ng-show="isInvalid(booksForm.name)">
+                <span ng-show="booksForm.name.$error.required">
+                    I haven't read a book without name in my life
+                </span>
+            </span>
+        </div><br>
+        <div>
+            <label>Enter Author:</label>
+            <input name="author" type="text" ng-model="bookDetails.author" required>
+            <span style="color:red" ng-show="isInvalid(booksForm.author)">
+                <span ng-show="booksForm.author.$error.required">
+                    Author is required.
+                </span>
+            </span>
+        </div><br>
+        <div>
+            <label>Category: </label>*
+            <select ng-model="bookDetails.category">
+                <option></option>
+                <option>{{'Fiction'}}</option>
+                <option>{{'Classics'}}</option>
+                <option>{{'Education'}}</option>
+            </select>
+        </div>
+    </div>
+    <br><br>
+    <div width="100%">
+        <span><button ng-click="reset()">Reset</button></span>
+        <span>
+            <button ng-disabled="isInvalidForm()" ng-click="submit()">
+                Submit
+            </button>
+        </span>
+    </div>
+    <section ng-if="booksWishlist.length">
+        <p>Books I wish to read before I die!!</p>
+        <table border="1">
+            <thead>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Category</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="book in booksWishlist track by $index">
+                    <td>{{book.name}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.category}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</form>
