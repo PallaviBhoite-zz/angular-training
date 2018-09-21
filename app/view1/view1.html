@@ -5,12 +5,5 @@
     >Load Books
     </button>
     <p>The available books are {{booksCtrl.books.length}}</p>
-    <table>
-        <tbody>
-        <tr ng-repeat="book in booksCtrl.books track by $index">
-            <td>{{book.name}}</td>
-            <td>{{book.category}}</td>
-        </tr>
-        </tbody>
-    </table>
+    <my-directive books="booksCtrl.books"></my-directive>
 </div>

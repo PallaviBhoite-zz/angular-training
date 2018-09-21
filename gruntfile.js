@@ -8,7 +8,8 @@ module.exports = function(grunt) {
                     './app/routes/*.js',
                     './app/services/*.js',
                     './app/view1/*.js',
-                    './app/view2/*.js'
+                    './app/view2/*.js',
+                    './app/directive/*.js'
                 ],
                 dest: './app/dest/app.js'
             }
